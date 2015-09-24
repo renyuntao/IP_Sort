@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#Author:root
+#Date:2015-09-24 15:00
+#Function:sort recored according to page view count
+#Usage:./pageview [Apache_access_log]
+cat < $1 | grep -Eo '"GET /[a-zA-Z]*.*HTTP/' | sort | uniq -c | sort -nrk 1 > ply
+exit 0
